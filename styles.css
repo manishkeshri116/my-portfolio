@@ -140,6 +140,14 @@
     animation: fadeUp 0.8s 0.2s ease both;
   }
   .hero-role span { color: var(--accent3); }
+  .hero-location {
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    margin-top: 10px;
+    animation: fadeUp 0.8s 0.25s ease both;
+  }
   .hero-desc {
     max-width: 560px;
     color: #94A3B8;
