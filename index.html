@@ -3,28 +3,104 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Manish Keshri is a full stack developer from Mirganj, Bihar, building responsive web and mobile applications, backend APIs, and database-driven products."/>
+<meta name="theme-color" content="#050A14"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Manish Keshri — Full Stack Developer"/>
+<meta property="og:description" content="Full stack developer building web and mobile applications with React, Next.js, Node.js, and TypeScript."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Manish Keshri — Full Stack Developer"/>
+<meta name="twitter:description" content="Full stack developer building web and mobile applications with React, Next.js, Node.js, and TypeScript."/>
 <title>Manish Keshri — Full Stack Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursor-ring"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
-<canvas id="bg-canvas"></canvas>
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
 
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
 
+<svg class="character-scene" viewBox="0 0 480 620" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="hoodie-fill" x1="95" y1="210" x2="370" y2="490" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <linearGradient id="screen-fill" x1="160" y1="325" x2="340" y2="455" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#152740"/>
+      <stop offset="1" stop-color="#0A1424"/>
+    </linearGradient>
+    <linearGradient id="desk-fill" x1="42" y1="470" x2="438" y2="520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#122943"/>
+      <stop offset="1" stop-color="#101B31"/>
+    </linearGradient>
+  </defs>
+
+  <g class="character-standing-legs">
+    <path d="M166 382h69l-8 102-12 83h-48l19-82-22-103Zm80 0h68l-20 103 18 82h-48l-17-82-1-103Z" fill="#172338" stroke="#52627B" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m167 557 47 2-2 16c-14 8-34 8-55 1l10-19Zm99 2 47-2 12 19c-21 7-41 7-55-1l-4-16Z" fill="#263A54" stroke="#7DD3FC" stroke-opacity=".55" stroke-width="2" stroke-linejoin="round"/>
+    <path d="M181 571h23m87 0h23" stroke="#38BDF8" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g class="character-body">
+    <path d="M192 196h137v57c-18 23-98 25-137 0v-57Z" fill="#D99172"/>
+    <path d="M140 272c19-39 52-57 91-63l29 30 28-30c43 7 77 25 96 65l28 140H112l28-142Z" fill="url(#hoodie-fill)" stroke="#7DD3FC" stroke-opacity=".52" stroke-width="3"/>
+    <path d="m231 209 29 30-26 32-31-41 28-21Zm28 30 28-30 28 21-30 41-26-32Z" fill="#E2EAF4" fill-opacity=".8"/>
+    <path d="M152 283c-22 35-39 82-40 123l55 14 45-89m138-48c24 35 42 81 44 123l-55 14-47-89" fill="none" stroke="#38BDF8" stroke-width="29" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M152 283c-22 35-39 82-40 123l55 14 45-89m138-48c24 35 42 81 44 123l-55 14-47-89" fill="none" stroke="#B9ECFF" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+    <path d="M186 314c19 18 42 27 74 27s55-9 75-27" fill="none" stroke="#D8F5FF" stroke-opacity=".45" stroke-width="3"/>
+  </g>
+
+  <g class="character-head">
+    <path d="M194 128c0-56 33-91 79-91 45 0 77 36 77 89v28c0 45-31 78-77 78-48 0-79-34-79-79v-25Z" fill="#E8AD8B"/>
+    <path d="M189 137c-8-64 22-112 77-118 42-5 78 19 91 59 7 20 7 43 0 65-8-10-14-23-16-39-31 10-74 6-105-8-9 18-24 32-47 41Z" fill="#172338"/>
+    <path d="M190 122c-16 1-19 18-12 33 4 9 11 14 19 14m152-47c15 0 18 17 11 32-4 9-11 14-19 15" fill="#E8AD8B"/>
+    <path d="M222 137c8-7 18-7 26-1m45 0c8-6 18-6 26 1" fill="none" stroke="#26344A" stroke-width="4" stroke-linecap="round"/>
+    <ellipse cx="237" cy="152" rx="4.5" ry="6" fill="#172338"/>
+    <ellipse cx="305" cy="152" rx="4.5" ry="6" fill="#172338"/>
+    <path d="M267 153c-2 12-5 21-1 24 3 2 7 2 10 0m-21 20c10 7 22 7 32-1" fill="none" stroke="#A95F55" stroke-width="3" stroke-linecap="round"/>
+    <path d="M251 215c11 7 27 7 39 0" fill="none" stroke="#D98D76" stroke-width="3" stroke-linecap="round"/>
+    <path d="M202 90c23-28 57-37 88-29" fill="none" stroke="#52627B" stroke-opacity=".65" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g class="character-seated-legs">
+    <path d="M181 460c13 7 27 12 47 12l19 8-20 23c-22-1-43-8-61-19l15-24Zm118 0c-13 7-27 12-47 12l-19 8 20 23c22-1 43-8 61-19l-15-24Z" fill="#172338" stroke="#52627B" stroke-width="3" stroke-linejoin="round"/>
+    <path d="m226 496 22 5-28 65-39-1 20-47 25-22Zm28 5 22-5 25 22 20 47-39 1-28-65Z" fill="#1D2D46" stroke="#52627B" stroke-width="3" stroke-linejoin="round"/>
+    <path d="M181 560h41l-5 17c-13 8-30 8-48 2l12-19Zm97 0h41l12 19c-18 6-35 6-48-2l-5-17Z" fill="#263A54" stroke="#7DD3FC" stroke-opacity=".55" stroke-width="2" stroke-linejoin="round"/>
+  </g>
+
+  <g class="character-desk">
+    <path d="M52 469h376l-20 33H72l-20-33Z" fill="url(#desk-fill)" stroke="#38BDF8" stroke-opacity=".5" stroke-width="2"/>
+    <path d="M81 502v94m318-94v94" stroke="#263A54" stroke-width="12" stroke-linecap="round"/>
+    <path d="M164 463V340c0-9 7-16 16-16h120c9 0 16 7 16 16v123" fill="#0A1220" stroke="#52627B" stroke-width="4"/>
+    <rect x="174" y="337" width="132" height="113" rx="7" fill="url(#screen-fill)"/>
+    <path d="M192 367h48m-48 16h82m-82 16h64m-64 16h42" stroke="#38BDF8" stroke-opacity=".75" stroke-width="4" stroke-linecap="round"/>
+    <path d="m258 367 10 8-10 8" fill="none" stroke="#34D399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M244 451h-29m58 0h-15" stroke="#818CF8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M157 462h166l-15 15H172l-15-15Z" fill="#263A54" stroke="#7DD3FC" stroke-opacity=".6" stroke-width="2"/>
+    <path d="M113 438c13-10 29-15 43-12m165 0c14-3 30 2 43 12" fill="none" stroke="#E8AD8B" stroke-width="13" stroke-linecap="round"/>
+    <circle cx="124" cy="431" r="4" fill="#F5D0B5"/>
+    <circle cx="353" cy="431" r="4" fill="#F5D0B5"/>
+    <path d="M380 440v-28m-8 8 8-8 8 8" fill="none" stroke="#34D399" stroke-opacity=".8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="380" cy="401" r="17" fill="#34D399" fill-opacity=".08" stroke="#34D399" stroke-opacity=".45"/>
+  </g>
+</svg>
+
 <!-- NAV -->
-<nav>
+<nav aria-label="Main navigation">
   <div class="nav-logo">Manish Keshri</div>
   <ul class="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#resume">Resume</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -37,19 +113,46 @@
 </nav>
 
 <!-- HERO -->
+<main>
 <section class="hero">
-  <div class="hero-tag">✦ Available for full-time roles</div>
-  <h1 class="hero-name">Manish<br/>Keshri</h1>
-  <p class="hero-role">Full Stack Developer · <span>React · Node.js · AWS · React Native</span></p>
-  <p class="hero-location">⌖ Mirganj, Bihar</p>
-  <p class="hero-desc">Building complete web and mobile experiences—from polished frontend interfaces to reliable backends and cloud deployments. I also use AI tools like ChatGPT, Claude, and Gemini to support research, coding, and debugging.</p>
+  <div class="hero-tag">✦ Available for full-time opportunities</div>
+  <h1 class="hero-name">I build useful<br/> digital products.</h1>
+  <div class="hero-role">
+    <p class="hero-role-title">I'm Manish Keshri <span>· Full Stack Developer</span></p>
+    <p class="hero-experience">2 Years of Hands-on Experience</p>
+    <div class="hero-tech-stack" aria-label="Primary technologies">
+      <span>React</span>
+      <span>Next.js</span>
+      <span>Node.js</span>
+      <span>TypeScript</span>
+    </div>
+  </div>
+  <p class="hero-location">⌖ Mirganj, Bihar, India</p>
+  <p class="hero-desc">I build responsive web applications, reliable backend services, database-driven features, and practical digital products.</p>
   <div class="hero-cta">
     <a href="#projects" class="btn-primary">View My Work</a>
-    <a href="#contact" class="btn-outline">Get in Touch</a>
+    <a class="btn-outline" href="Manish_Keshri.pdf" download="Manish_Keshri.pdf">Download Resume</a>
+    <a href="#contact" class="btn-outline">Contact Me</a>
   </div>
   <div class="scroll-indicator">
     <div class="scroll-line"></div>
     scroll
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="section-label">// a little about me</div>
+  <div class="about-content">
+    <div>
+      <h2 class="section-title">Full stack thinking.<br/><em>Practical solutions.</em></h2>
+    </div>
+    <div class="about-copy">
+      <p>I'm a developer who enjoys taking ideas from a clear interface through APIs, authentication, and database integration. I work across web and mobile applications and contribute to features from implementation through debugging and deployment.</p>
+      <p>I care about solving real problems, building useful products, and writing code that's understandable and maintainable. I keep learning as tools and technologies evolve; AI assistants such as ChatGPT, Claude, and Gemini support my research and development workflow.</p>
+    </div>
   </div>
 </section>
 
@@ -60,7 +163,7 @@
   <div class="section-label">// what i know</div>
   <h2 class="section-title">Skills &amp; <em>Technologies</em></h2>
 
-  <!-- AWS Banner -->
+  <!-- AWS services currently featured in the portfolio -->
   <div class="aws-banner">
     <h3>☁️ AWS Cloud Infrastructure</h3>
     <p>Experienced in deploying and managing cloud applications using core AWS services — from compute and storage to authentication and content delivery.</p>
@@ -119,6 +222,8 @@
         <span class="tag green">Express.js</span>
         <span class="tag green">NestJS</span>
         <span class="tag green">REST APIs</span>
+        <span class="tag green">Authentication</span>
+        <span class="tag green">API Integration</span>
         <span class="tag green">OpenAI API</span>
       </div>
     </div>
@@ -127,6 +232,7 @@
       <h3>Databases</h3>
       <div class="skill-tags">
         <span class="tag orange">MongoDB</span>
+        <span class="tag orange">PostgreSQL</span>
         <span class="tag orange">MySQL</span>
         <span class="tag orange">Supabase</span>
         <span class="tag orange">Firebase</span>
@@ -159,73 +265,9 @@
   <h2 class="section-title">Featured <em>Projects</em></h2>
   <div class="projects-grid">
 
-    <div class="project-card">
-      <div class="project-num">01</div>
-      <h3>To-Let Globe</h3>
-      <p>Real estate platform connecting property owners and tenants with real-time chat, property listing, and advanced search — built for scale.</p>
-      <div class="project-tech">
-        <span class="tag">React</span>
-        <span class="tag">Next.js</span>
-        <span class="tag purple">TypeScript</span>
-        <span class="tag green">Node.js</span>
-        <span class="tag purple">Tailwind</span>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span class="project-stat">↑ 35% user engagement</span>
-        <span class="project-stat">↓ 40% response time</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-num">02</div>
-      <h3>Study Notion</h3>
-      <p>Full-featured ed-tech platform enabling 5,000+ students and 20+ mentors to manage and access courses with a rich admin panel.</p>
-      <div class="project-tech">
-        <span class="tag">React</span>
-        <span class="tag green">Node.js</span>
-        <span class="tag orange">MongoDB</span>
-        <span class="tag green">Express</span>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span class="project-stat">5,000+ students</span>
-        <span class="project-stat">↑ 80% engagement</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-num">03</div>
-      <h3>Crypto Live Tracker</h3>
-      <p>Real-time cryptocurrency tracking dashboard with live charts, price alerts, and AI-powered insights using OpenAI integration.</p>
-      <div class="project-tech">
-        <span class="tag">React</span>
-        <span class="tag purple">Chart.js</span>
-        <span class="tag orange">Firebase</span>
-        <span class="tag green">OpenAI</span>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span class="project-stat">↑ 85% data accuracy</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-num">04</div>
-      <h3>Smart Farming IoT</h3>
-      <p>Real-time soil and environment monitoring using Arduino sensors, Firebase backend, and machine learning for prediction and alerts.</p>
-      <div class="project-tech">
-        <span class="tag">Arduino</span>
-        <span class="tag purple">Android Studio</span>
-        <span class="tag orange">Firebase</span>
-        <span class="tag green">ML</span>
-      </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <span class="project-stat">85% ML accuracy</span>
-        <span class="project-stat">↓ 70% manual work</span>
-      </div>
-    </div>
-
     <div class="project-card latest-project">
       <span class="project-badge">✦ Latest Project</span>
-      <div class="project-num">05</div>
+      <div class="project-num">01</div>
       <h3>FireLabs</h3>
       <p><strong>Fintech &amp; Digital Asset Platform</strong><br/>Secure digital asset platform featuring wallet operations, transaction approvals, authentication, and role-based access control.</p>
       <div class="project-tech">
@@ -235,7 +277,7 @@
         <span class="tag green">DFNS SDK</span>
         <span class="tag">REST APIs</span>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div class="project-highlights">
         <span class="project-stat">Secure authentication</span>
         <span class="project-stat">MFA</span>
         <span class="project-stat">Audit Logs</span>
@@ -244,7 +286,7 @@
 
     <div class="project-card latest-project">
       <span class="project-badge">✦ Latest Project</span>
-      <div class="project-num">06</div>
+      <div class="project-num">02</div>
       <h3>FireLabs &amp; Whips</h3>
       <p><strong>Mobile App · Customer Engagement</strong><br/>Mobile application for lead capture, QR-based customer engagement, and contact management, integrated with backend APIs and Firebase services.</p>
       <div class="project-tech">
@@ -254,10 +296,75 @@
         <span class="tag orange">Firebase</span>
         <span class="tag">REST APIs</span>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <div class="project-highlights">
         <span class="project-stat">Lead Management</span>
         <span class="project-stat">QR Engagement</span>
         <span class="project-stat">Mobile UX</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">03</div>
+      <h3>To-Let Globe</h3>
+      <p>Real estate platform for property discovery. Contributed to listing and search experiences and real-time chat between property owners and tenants.</p>
+      <div class="project-tech">
+        <span class="tag">React</span>
+        <span class="tag">Next.js</span>
+        <span class="tag purple">TypeScript</span>
+        <span class="tag green">Node.js</span>
+        <span class="tag purple">Tailwind</span>
+      </div>
+      <div class="project-highlights">
+        <span class="project-stat">Property listings</span>
+        <span class="project-stat">Search &amp; chat</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">04</div>
+      <h3>Study Notion</h3>
+      <p>Education platform for learning and course management, with an admin panel for managing platform content.</p>
+      <div class="project-tech">
+        <span class="tag">React</span>
+        <span class="tag green">Node.js</span>
+        <span class="tag orange">MongoDB</span>
+        <span class="tag green">Express</span>
+      </div>
+      <div class="project-highlights">
+        <span class="project-stat">Course management</span>
+        <span class="project-stat">Admin panel</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">05</div>
+      <h3>Crypto Live Tracker</h3>
+      <p>Cryptocurrency dashboard for tracking market prices, viewing live charts, setting alerts, and exploring AI-powered insights.</p>
+      <div class="project-tech">
+        <span class="tag">React</span>
+        <span class="tag purple">Chart.js</span>
+        <span class="tag orange">Firebase</span>
+        <span class="tag green">OpenAI</span>
+      </div>
+      <div class="project-highlights">
+        <span class="project-stat">Live charts</span>
+        <span class="project-stat">Price alerts</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-num">06</div>
+      <h3>Smart Farming IoT</h3>
+      <p>IoT application that uses Arduino sensors and Firebase to monitor soil and environmental conditions and provide alerts.</p>
+      <div class="project-tech">
+        <span class="tag">Arduino</span>
+        <span class="tag purple">Android Studio</span>
+        <span class="tag orange">Firebase</span>
+        <span class="tag green">ML</span>
+      </div>
+      <div class="project-highlights">
+        <span class="project-stat">Sensor monitoring</span>
+        <span class="project-stat">Alerts</span>
       </div>
     </div>
 
@@ -273,24 +380,39 @@
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">NOV 2024 — PRESENT</div>
+      <div class="timeline-date">2024 — PRESENT</div>
       <div class="timeline-title">Full Stack Developer</div>
       <div class="timeline-company">Freelancer · Remote</div>
-      <div class="timeline-desc">Building and deploying web & mobile apps for clients using React, React Native, TypeScript, and Next.js. Integrating APIs, databases (MongoDB, Supabase), OpenAI, and authentication systems. Delivering clean, maintainable code across multiple projects.</div>
+      <ul class="experience-points">
+        <li>Build web and mobile features with React, React Native, TypeScript, and Next.js.</li>
+        <li>Integrate APIs, databases, and authentication; debug application issues and support deployments.</li>
+      </ul>
     </div>
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">JUL 2024 — DEC 2024</div>
       <div class="timeline-title">Full Stack Developer Intern</div>
       <div class="timeline-company">To Let Globe · Chandigarh</div>
-      <div class="timeline-desc">Contributed to the development of a large-scale real estate platform. Built property listing systems, real-time chat features, and optimized frontend performance — leading to 35% higher user engagement.</div>
+      <ul class="experience-points">
+        <li>Built property listing and real-time chat features for a real estate platform.</li>
+        <li>Contributed to frontend development and performance improvements.</li>
+      </ul>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">// education</div>
+  <h2 class="section-title">Academic <em>Background</em></h2>
+  <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
       <div class="timeline-date">2020 — 2024</div>
-      <div class="timeline-title">B.E. Computer Science & Engineering</div>
+      <div class="timeline-title">B.E. Computer Science &amp; Engineering</div>
       <div class="timeline-company">Chandigarh University · Chandigarh</div>
-      <div class="timeline-desc">Graduated with a degree in Computer Science. Built strong foundations in data structures, algorithms, software engineering, and modern web development.</div>
     </div>
   </div>
 </section>
@@ -308,18 +430,19 @@
 <div class="divider"></div>
 
 <!-- CONTACT -->
-<section id="contact" class="contact-section" style="padding:100px 40px;">
+<section id="contact" class="contact-section">
   <div class="contact-card">
     <h2>Let's Work Together</h2>
     <p>Open to full-time full stack developer roles — remote or on-site. Let's build something great.</p>
     <div class="contact-links">
       <a href="mailto:manishkeshri116@gmail.com" class="contact-link">📧 manishkeshri116@gmail.com</a>
       <a href="tel:+917909030641" class="contact-link">📞 +91 7909030641</a>
-      <a href="https://github.com/manishkeshri116" class="contact-link" target="_blank">🐙 GitHub</a>
-      <a href="https://www.linkedin.com/in/manish-keshri-972b02216/" class="contact-link">💼 LinkedIn</a>
+      <a href="https://github.com/manishkeshri116" class="contact-link" target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/manish-keshri-972b02216/" class="contact-link" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <p>Designed & Built by <span style="color:var(--accent)">Manish Keshri</span> · 2024</p>

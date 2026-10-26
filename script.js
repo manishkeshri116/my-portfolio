@@ -108,3 +108,34 @@
     el.dataset.delay = (i % 4) * 100;
     observer.observe(el);
   });
+
+  // Reveal the character standing first, then seated at the desktop.
+  const characterScene = document.querySelector('.character-scene');
+  if (characterScene) {
+    const clampProgress = value => Math.max(0, Math.min(1, value));
+    let characterFrame = 0;
+
+    function updateCharacterScene() {
+      characterFrame = 0;
+      const viewportHeight = window.innerHeight || 1;
+      const scrollPosition = window.scrollY;
+      const bodyProgress = clampProgress(scrollPosition / (viewportHeight * 0.45));
+      const sitProgress = clampProgress((scrollPosition - viewportHeight * 0.55) / (viewportHeight * 0.8));
+
+      characterScene.style.setProperty('--body-opacity', bodyProgress);
+      characterScene.style.setProperty('--body-offset', `${18 * (1 - bodyProgress)}px`);
+      characterScene.style.setProperty('--sit-offset', `${14 * sitProgress}px`);
+      characterScene.style.setProperty('--desk-opacity', sitProgress);
+      characterScene.style.setProperty('--desk-offset', `${20 * (1 - sitProgress)}px`);
+      characterScene.style.setProperty('--standing-opacity', bodyProgress * (1 - sitProgress));
+      characterScene.style.setProperty('--seated-opacity', sitProgress);
+    }
+
+    function requestCharacterUpdate() {
+      if (!characterFrame) characterFrame = requestAnimationFrame(updateCharacterScene);
+    }
+
+    window.addEventListener('scroll', requestCharacterUpdate, { passive: true });
+    window.addEventListener('resize', requestCharacterUpdate);
+    updateCharacterScene();
+  }
