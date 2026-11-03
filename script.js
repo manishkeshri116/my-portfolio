@@ -109,6 +109,93 @@
     observer.observe(el);
   });
 
+  // Auto-advance the project cards while the carousel is visible.
+  const projectCarousel = document.querySelector('.projects-grid');
+  if (projectCarousel) {
+    const progressTrack = document.querySelector('.projects-scroll-progress-track');
+    const progressFill = document.querySelector('.projects-scroll-progress-fill');
+    const progressValue = document.querySelector('.projects-scroll-progress-value');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const pauseReasons = new Set();
+    let carouselTimer;
+    let manualResumeTimer;
+    let carouselVisible = false;
+
+    function updateCarouselProgress() {
+      if (!progressTrack || !progressFill || !progressValue) return;
+      const maxScroll = projectCarousel.scrollWidth - projectCarousel.clientWidth;
+      const progress = maxScroll > 0 ? Math.round((projectCarousel.scrollLeft / maxScroll) * 100) : 0;
+      progressFill.style.width = `${progress}%`;
+      progressTrack.setAttribute('aria-valuenow', String(progress));
+      progressValue.textContent = `${progress}%`;
+    }
+
+    projectCarousel.addEventListener('scroll', updateCarouselProgress, { passive: true });
+    window.addEventListener('resize', updateCarouselProgress);
+    updateCarouselProgress();
+
+    function stopCarousel() {
+      window.clearInterval(carouselTimer);
+      carouselTimer = undefined;
+    }
+
+    function startCarousel() {
+      if (carouselTimer || !carouselVisible || pauseReasons.size || reducedMotion.matches || document.hidden) return;
+      carouselTimer = window.setInterval(() => {
+        const cards = projectCarousel.querySelectorAll('.project-card');
+        if (cards.length < 3 || projectCarousel.scrollWidth <= projectCarousel.clientWidth + 1) return;
+
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        const gap = Number.parseFloat(getComputedStyle(projectCarousel).columnGap) || 0;
+        const maxScroll = projectCarousel.scrollWidth - projectCarousel.clientWidth;
+        if (projectCarousel.scrollLeft >= maxScroll - 8) {
+          projectCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          projectCarousel.scrollBy({ left: cardWidth + gap, behavior: 'smooth' });
+        }
+      }, 4200);
+    }
+
+    function pauseCarousel(reason) {
+      pauseReasons.add(reason);
+      stopCarousel();
+    }
+
+    function resumeCarousel(reason) {
+      pauseReasons.delete(reason);
+      startCarousel();
+    }
+
+    projectCarousel.addEventListener('pointerenter', () => pauseCarousel('pointer'));
+    projectCarousel.addEventListener('pointerleave', () => resumeCarousel('pointer'));
+    projectCarousel.addEventListener('focusin', () => pauseCarousel('focus'));
+    projectCarousel.addEventListener('focusout', event => {
+      if (!projectCarousel.contains(event.relatedTarget)) resumeCarousel('focus');
+    });
+    ['pointerdown', 'wheel', 'touchstart'].forEach(eventName => {
+      projectCarousel.addEventListener(eventName, () => {
+        pauseCarousel('manual');
+        window.clearTimeout(manualResumeTimer);
+        manualResumeTimer = window.setTimeout(() => resumeCarousel('manual'), 6000);
+      }, { passive: true });
+    });
+
+    new IntersectionObserver(entries => {
+      carouselVisible = entries[0].isIntersecting;
+      if (carouselVisible) startCarousel();
+      else stopCarousel();
+    }, { threshold: 0.2 }).observe(projectCarousel);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) stopCarousel();
+      else startCarousel();
+    });
+    reducedMotion.addEventListener('change', () => {
+      if (reducedMotion.matches) stopCarousel();
+      else startCarousel();
+    });
+  }
+
   // Reveal the character standing first, then seated at the desktop.
   const characterScene = document.querySelector('.character-scene');
   if (characterScene) {

@@ -163,9 +163,8 @@
   <div class="section-label">// what i know</div>
   <h2 class="section-title">Skills &amp; <em>Technologies</em></h2>
 
-  <!-- AWS services currently featured in the portfolio -->
   <div class="aws-banner">
-    <h3>☁️ AWS Cloud Infrastructure</h3>
+    <h3>☁️ AWS Experience</h3>
     <p>Experienced in deploying and managing cloud applications using core AWS services — from compute and storage to authentication and content delivery.</p>
     <div class="aws-services">
       <div class="aws-tag">EC2</div>
@@ -234,6 +233,7 @@
         <span class="tag orange">MongoDB</span>
         <span class="tag orange">PostgreSQL</span>
         <span class="tag orange">MySQL</span>
+        <span class="tag orange">Redis</span>
         <span class="tag orange">Supabase</span>
         <span class="tag orange">Firebase</span>
         <span class="tag orange">NoSQL</span>
@@ -245,6 +245,7 @@
       <div class="skill-tags">
         <span class="tag">Git</span>
         <span class="tag">GitHub</span>
+        <span class="tag">Docker</span>
         <span class="tag">Python</span>
         <span class="tag">Java</span>
         <span class="tag">C++</span>
@@ -263,111 +264,141 @@
 <section id="projects">
   <div class="section-label">// what i've built</div>
   <h2 class="section-title">Featured <em>Projects</em></h2>
+  <p class="projects-scroll-hint">Scroll or swipe to explore more projects <span aria-hidden="true">→</span></p>
   <div class="projects-grid">
 
-    <div class="project-card latest-project">
-      <span class="project-badge">✦ Latest Project</span>
-      <div class="project-num">01</div>
-      <h3>FireLabs</h3>
-      <p><strong>Fintech &amp; Digital Asset Platform</strong><br/>Secure digital asset platform featuring wallet operations, transaction approvals, authentication, and role-based access control.</p>
-      <div class="project-tech">
-        <span class="tag">Next.js</span>
-        <span class="tag purple">TypeScript</span>
-        <span class="tag orange">AWS Cognito</span>
-        <span class="tag green">DFNS SDK</span>
-        <span class="tag">REST APIs</span>
+      <div class="project-card latest-project intellidocs-card">
+        <span class="project-badge">✦ AI Project</span>
+        <div class="intellidocs-card-content">
+        <h3>IntelliDocs AI</h3>
+        <p><strong>AI Document Management &amp; Chat</strong><br/>A full-stack application for organizing documents, generating summaries, and asking questions grounded in uploaded files, alongside a separate general AI chat.</p>
+        <p>Built the React and TypeScript dashboard and FastAPI APIs, connecting JWT authentication, PostgreSQL, and Gemini. PDF, DOCX, and TXT uploads are extracted into overlapping chunks, embedded with Gemini, and searched by cosine similarity in pgvector. The top relevant excerpts are sent to Gemini for answers with page citations and source snippets. General chat supports PDF and image attachments, saved conversations, and a typing animation.</p>
+        <p><strong>Engineering focus:</strong> Handling format-specific extraction and page metadata, filtering low-similarity retrieval results, validating file uploads, and surfacing API and AI errors in the UI.</p>
+        <div class="project-tech">
+          <span class="tag">React</span>
+          <span class="tag purple">TypeScript</span>
+          <span class="tag green">FastAPI · Python</span>
+          <span class="tag orange">PostgreSQL · pgvector</span>
+          <span class="tag purple">Google Gemini</span>
+          <span class="tag">Tailwind CSS</span>
+        </div>
+        <div class="project-highlights">
+          <span class="project-stat">Document RAG &amp; citations</span>
+          <span class="project-stat">JWT authentication</span>
+          <span class="project-stat">Chat with file attachments</span>
+        </div>
+        </div>
       </div>
-      <div class="project-highlights">
-        <span class="project-stat">Secure authentication</span>
-        <span class="project-stat">MFA</span>
-        <span class="project-stat">Audit Logs</span>
-      </div>
-    </div>
 
-    <div class="project-card latest-project">
-      <span class="project-badge">✦ Latest Project</span>
-      <div class="project-num">02</div>
-      <h3>FireLabs &amp; Whips</h3>
-      <p><strong>Mobile App · Customer Engagement</strong><br/>Mobile application for lead capture, QR-based customer engagement, and contact management, integrated with backend APIs and Firebase services.</p>
-      <div class="project-tech">
-        <span class="tag">React Native</span>
-        <span class="tag purple">TypeScript</span>
-        <span class="tag green">Redux Toolkit</span>
-        <span class="tag orange">Firebase</span>
-        <span class="tag">REST APIs</span>
+      <div class="project-card latest-project">
+        <span class="project-badge">✦ Latest Project</span>
+        <div class="project-num">01</div>
+        <h3>FireLabs</h3>
+        <p><strong>Fintech &amp; Digital Asset Platform</strong><br/>Secure digital asset platform featuring wallet operations, transaction approvals, authentication, and role-based access control.</p>
+        <div class="project-tech">
+          <span class="tag">Next.js</span>
+          <span class="tag purple">TypeScript</span>
+          <span class="tag orange">AWS Cognito</span>
+          <span class="tag green">DFNS SDK</span>
+          <span class="tag">REST APIs</span>
+        </div>
+        <div class="project-highlights">
+          <span class="project-stat">Secure authentication</span>
+          <span class="project-stat">MFA</span>
+          <span class="project-stat">Audit Logs</span>
+        </div>
       </div>
-      <div class="project-highlights">
-        <span class="project-stat">Lead Management</span>
-        <span class="project-stat">QR Engagement</span>
-        <span class="project-stat">Mobile UX</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-num">03</div>
-      <h3>To-Let Globe</h3>
-      <p>Real estate platform for property discovery. Contributed to listing and search experiences and real-time chat between property owners and tenants.</p>
-      <div class="project-tech">
-        <span class="tag">React</span>
-        <span class="tag">Next.js</span>
-        <span class="tag purple">TypeScript</span>
-        <span class="tag green">Node.js</span>
-        <span class="tag purple">Tailwind</span>
+      <div class="project-card latest-project">
+        <span class="project-badge">✦ Latest Project</span>
+        <div class="project-num">02</div>
+        <h3>FireLabs &amp; Whips</h3>
+        <p><strong>Mobile App · Customer Engagement</strong><br/>Mobile application for lead capture, QR-based customer engagement, and contact management, integrated with backend APIs and Firebase services.</p>
+        <div class="project-tech">
+          <span class="tag">React Native</span>
+          <span class="tag purple">TypeScript</span>
+          <span class="tag green">Redux Toolkit</span>
+          <span class="tag orange">Firebase</span>
+          <span class="tag">REST APIs</span>
+        </div>
+        <div class="project-highlights">
+          <span class="project-stat">Lead Management</span>
+          <span class="project-stat">QR Engagement</span>
+          <span class="project-stat">Mobile UX</span>
+        </div>
       </div>
-      <div class="project-highlights">
-        <span class="project-stat">Property listings</span>
-        <span class="project-stat">Search &amp; chat</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-num">04</div>
-      <h3>Study Notion</h3>
-      <p>Education platform for learning and course management, with an admin panel for managing platform content.</p>
-      <div class="project-tech">
-        <span class="tag">React</span>
-        <span class="tag green">Node.js</span>
-        <span class="tag orange">MongoDB</span>
-        <span class="tag green">Express</span>
+      <div class="project-card">
+        <div class="project-num">03</div>
+        <h3>To-Let Globe</h3>
+        <p>Real estate platform for property discovery. Contributed to listing and search experiences and real-time chat between property owners and tenants.</p>
+        <div class="project-tech">
+          <span class="tag">React</span>
+          <span class="tag">Next.js</span>
+          <span class="tag purple">TypeScript</span>
+          <span class="tag green">Node.js</span>
+          <span class="tag purple">Tailwind</span>
+        </div>
+        <div class="project-highlights">
+          <span class="project-stat">Property listings</span>
+          <span class="project-stat">Search &amp; chat</span>
+        </div>
       </div>
-      <div class="project-highlights">
-        <span class="project-stat">Course management</span>
-        <span class="project-stat">Admin panel</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-num">05</div>
-      <h3>Crypto Live Tracker</h3>
-      <p>Cryptocurrency dashboard for tracking market prices, viewing live charts, setting alerts, and exploring AI-powered insights.</p>
-      <div class="project-tech">
-        <span class="tag">React</span>
-        <span class="tag purple">Chart.js</span>
-        <span class="tag orange">Firebase</span>
-        <span class="tag green">OpenAI</span>
+      <div class="project-card">
+        <div class="project-num">04</div>
+        <h3>Study Notion</h3>
+        <p>Education platform for learning and course management, with an admin panel for managing platform content.</p>
+        <div class="project-tech">
+          <span class="tag">React</span>
+          <span class="tag green">Node.js</span>
+          <span class="tag orange">MongoDB</span>
+          <span class="tag green">Express</span>
+        </div>
+        <div class="project-highlights">
+          <span class="project-stat">Course management</span>
+          <span class="project-stat">Admin panel</span>
+        </div>
       </div>
-      <div class="project-highlights">
-        <span class="project-stat">Live charts</span>
-        <span class="project-stat">Price alerts</span>
-      </div>
-    </div>
 
-    <div class="project-card">
-      <div class="project-num">06</div>
-      <h3>Smart Farming IoT</h3>
-      <p>IoT application that uses Arduino sensors and Firebase to monitor soil and environmental conditions and provide alerts.</p>
-      <div class="project-tech">
-        <span class="tag">Arduino</span>
-        <span class="tag purple">Android Studio</span>
-        <span class="tag orange">Firebase</span>
-        <span class="tag green">ML</span>
+      <div class="project-card">
+        <div class="project-num">05</div>
+        <h3>Crypto Live Tracker</h3>
+        <p>Cryptocurrency dashboard for tracking market prices, viewing live charts, setting alerts, and exploring AI-powered insights.</p>
+        <div class="project-tech">
+          <span class="tag">React</span>
+          <span class="tag purple">Chart.js</span>
+          <span class="tag orange">Firebase</span>
+          <span class="tag green">OpenAI</span>
+        </div>
+        <div class="project-highlights">
+          <span class="project-stat">Live charts</span>
+          <span class="project-stat">Price alerts</span>
+        </div>
       </div>
-      <div class="project-highlights">
-        <span class="project-stat">Sensor monitoring</span>
-        <span class="project-stat">Alerts</span>
-      </div>
-    </div>
 
+      <div class="project-card">
+        <div class="project-num">06</div>
+        <h3>Smart Farming IoT</h3>
+        <p>IoT application that uses Arduino sensors and Firebase to monitor soil and environmental conditions and provide alerts.</p>
+        <div class="project-tech">
+          <span class="tag">Arduino</span>
+          <span class="tag purple">Android Studio</span>
+          <span class="tag orange">Firebase</span>
+          <span class="tag green">ML</span>
+        </div>
+        <div class="project-highlights">
+          <span class="project-stat">Sensor monitoring</span>
+          <span class="project-stat">Alerts</span>
+        </div>
+      </div>
+
+  </div>
+  <div class="projects-scroll-progress">
+    <div class="projects-scroll-progress-track" role="progressbar" aria-label="Project carousel position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="projects-scroll-progress-fill"></span>
+    </div>
+    <span class="projects-scroll-progress-value" aria-hidden="true">0%</span>
   </div>
 </section>
 
@@ -380,7 +411,7 @@
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
-      <div class="timeline-date">2024 — PRESENT</div>
+      <div class="timeline-date">JAN 2025 — PRESENT</div>
       <div class="timeline-title">Full Stack Developer</div>
       <div class="timeline-company">Freelancer · Remote</div>
       <ul class="experience-points">
@@ -445,7 +476,7 @@
 </main>
 
 <footer>
-  <p>Designed & Built by <span style="color:var(--accent)">Manish Keshri</span> · 2024</p>
+  <p>Designed & Built by <span style="color:var(--accent)">Manish Keshri</span> · 2026</p>
 </footer>
 
 <script src="script.js"></script>
